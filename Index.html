@@ -1,50 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback</title>
-    <link rel="icon" type="image/ico" sizes="32x32" href="Simbank_STK_logo.ico">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #e9ecef; /* Light gray background for a softer look */
-            color: #333;
-            text-align: center;
-            padding: 50px;
-        }
-        .container {
-            background: #ffffff; /* White background for the container */
-            padding: 30px;
-            border-radius: 10px; /* More rounded corners */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow for a more modern look */
-            max-width: 600px; /* Limit the width for better readability */
-            margin: auto; /* Center the container */
-        }
-        h1 {
-            color: #dc3545; /* Red color for the heading to emphasize the apology */
-        }
-        p {
-            line-height: 1.6; /* Improved line height for better readability */
-        }
-        a {
-            color: #007BFF;
-            text-decoration: none;
-            font-weight: bold; /* Bold link for emphasis */
-        }
-        a:hover {
-            text-decoration: underline;
-            color: #0056b3; /* Darker blue on hover */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Sincere Apologies</title>
+  <style>
+    :root {
+      --primary-blue: #1565C0;
+      --secondary-blue: #0D47A1;
+      --accent-purple: #7B1FA2;
+      --light-accent: #E1BEE7;
+      --text-dark: #212121;
+      --text-light: #FAFAFA;
+      --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dark);
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    .apology-container {
+      max-width: 800px;
+      width: 100%;
+      background: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .apology-header {
+      margin-bottom: 2rem;
+    }
+
+    .apology-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 1.5rem;
+    }
+
+    h1 {
+      color: var(--primary-blue);
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .apology-message {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: var(--text-dark);
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      display: inline-block;
+    }
+
+    .primary-btn {
+      background-color: var(--primary-blue);
+      color: white;
+      box-shadow: var(--shadow);
+      animation: pulse 2s infinite;
+    }
+
+    .primary-btn:hover {
+      background-color: var(--secondary-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .secondary-btn {
+      color: var(--primary-blue);
+      background: transparent;
+      border: 2px solid var(--primary-blue);
+    }
+
+    .secondary-btn:hover {
+      background-color: rgba(21, 101, 192, 0.1);
+    }
+
+    .redirect-notice {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1.5rem;
+    }
+
+    .progress-container {
+      width: 100%;
+      height: 4px;
+      background: #e0e0e0;
+      border-radius: 2px;
+      margin-top: 1.5rem;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 100%;
+      background: var(--primary-blue);
+      border-radius: 2px;
+      animation: progressBar 15s linear forwards;
+      transform-origin: left;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes progressBar {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    @media (max-width: 768px) {
+      .apology-container {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 1.75rem;
+      }
+      
+      .apology-message {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>We Apologize for the Inconvenience</h1>
-        <p>Dear Valued Customers,</p>
-        <p>We are currently experiencing issues with changing our domain. We sincerely apologize for any inconvenience this may cause.</p>
-        <p>Please click the link below to be redirected to our original system:</p>
-        <p><a href="https://sim-fund.netlify.app">Go to Original System</a></p>
+  <div class="apology-container">
+    <div class="apology-header">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/72c128d9-620c-45ea-b538-0c8e934434c4.png" alt="Symbolic broken chain being repaired by hands with blue and purple tones representing reconciliation" class="apology-icon">
+      <h1>We Deeply Regret This Situation</h1>
     </div>
+    
+    <p class="apology-message">
+      We sincerely apologize for the inconvenience you've experienced. Our team is actively working to resolve the issue and prevent future occurrences. 
+      We value your trust and appreciate your patience as we direct you back to our original system where you can continue your experience without interruption.
+    </p>
+    
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+    
+    <p class="redirect-notice">You will be automatically redirected to our original system in <span id="countdown">15</span> seconds</p>
+    
+    <div class="actions">
+      <a href="https://your-original-system.com" class="btn primary-btn">Continue to Original System</a>
+      <button class="btn secondary-btn" onclick="stopRedirect()">Stay on This Page</button>
+      <a href="https://sim-fund.netlify.app/" class="btn secondary-btn">Visit Sim Fund</a>
+    </div>
+  </div>
+  
+  <script>
+    // Countdown timer for redirect
+    let seconds = 15;
+    const countdownElement = document.getElementById('countdown');
+    let redirectTimer = setInterval(updateCountdown, 1000);
+    let redirectTimeout = setTimeout(redirectToOriginal, 15000);
+    
+    function updateCountdown() {
+      seconds--;
+      countdownElement.textContent = seconds;
+      
+      if (seconds <= 0) {
+        clearInterval(redirectTimer);
+      }
+    }
+    
+    function redirectToOriginal() {
+      window.location.href = "https://your-original-system.com";
+    }
+    
+    function stopRedirect() {
+      clearInterval(redirectTimer);
+      clearTimeout(redirectTimeout);
+      document.querySelector('.progress-bar').style.animationPlayState = 'paused';
+      countdownElement.textContent = "paused";
+    }
+    
+    // Gentle load animation for content
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelector('.apology-header').style.opacity = '1';
+      }, 100);
+    });
+  </script>
 </body>
 </html>
